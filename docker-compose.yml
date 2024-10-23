@@ -10,11 +10,11 @@ services:
       - "3300-3310:3306"
   ansible:
     build:
-      context: ./task2
+      context: ./ansible
     volumes:
-      - ./task2/playbooks:/playbooks
-      - ./task2/inventory:/inventory
-      - ./task2/ansible.cfg:/etc/ansible/ansible.cfg
+      - ./ansible/playbooks:/playbooks
+      - ./ansible/inventory:/inventory
+      - ./ansible/ansible.cfg:/etc/ansible/ansible.cfg
     depends_on:
       - app
     ports:
